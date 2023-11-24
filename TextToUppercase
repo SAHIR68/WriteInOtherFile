@@ -1,0 +1,25 @@
+package com.example.defaultpachage;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+public class TextToUppercase {
+	public static void main(String[]args) {
+		Path path = Paths.get("/Users/faezehparanideh/Downloads/Ahmad/1.txt");
+		try {
+			List <String> list = Files.readAllLines(path);
+				for(String line :list) {
+					String uppercase = line.toUpperCase();
+					System.out.println(uppercase);
+					Files.writeString(Paths.get( "/Users/faezehparanideh/Downloads/Ahmad/2.txt"), uppercase);
+				}
+				
+				
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}
